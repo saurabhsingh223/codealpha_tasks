@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image" href="/utils/myimg.jpg" />
+    <title>Contact - Saurabh</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      :root {
+        --primary-color: #6406b7;
+        --secondary-color: #c77dff;
+        --dark-bg: #121212;
+        --dark-text: #e0e0e0;
+        --card-bg: #1e1e1e;
+        --accent-color: #6f5196;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--dark-text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        background-color: var(--primary-color);
+        padding: 20px;
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+        font-weight: bold;
+      }
+
+      .contact-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .contact-card {
+        background-color: var(--card-bg);
+        border-radius: 12px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      }
+
+      .contact-card h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+        text-align: center;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-info div {
+        background-color: #292929;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      .contact-info a {
+        color: #c77dff;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #1c1c1c;
+        font-size: 0.9rem;
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Contact Me</header>
+
+    <div class="contact-container">
+      <div class="contact-card">
+        <h2>Let's Connect</h2>
+        <div class="contact-info">
+          <div>📞 Phone: <a href="tel:+918115950486">8115950486</a></div>
+          <div>📧 Email: <a href="mailto:bhriguvanshi223@gmail.com">bhriguvanshi223@gmail.com</a></div>
+          <div>🔗 LinkedIn: <a href="https://www.linkedin.com/in/sksinghs318" target="_blank">linkedin.com/in/sksinghs318</a></div>
+          <div>💻 GitHub: <a href="https://github.com/saurabhsingh223" target="_blank">github.com/saurabhsingh223</a></div>
+          <div>📍 Location: Ghaziabad, Delhi</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Saurabh Singh. All rights reserved.
+    </footer>
+  </body>
+</html>

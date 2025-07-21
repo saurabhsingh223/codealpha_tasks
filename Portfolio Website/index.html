@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image" href="/utils/myimg.jpg" />
+    <title>Saurabh - Developer Portfolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      :root {
+        --primary-color: #6406b7;
+        --secondary-color: #c77dff;
+        --light-bg: #f4f0fb;
+        --dark-bg: #121212;
+        --light-text: #1e1e1e;
+        --dark-text: #e0e0e0;
+        --accent-color: #6f5196;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--dark-text);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        padding: 0 20px;
+        background-color: var(--primary-color);
+        position: relative;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--secondary-color);
+      }
+
+      .menu-icon {
+        display: none;
+        font-size: 1.8rem;
+        color: white;
+        cursor: pointer;
+      }
+
+      .left {
+        font-size: 1.5rem;
+        color: white;
+        margin: 0 190px;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--primary-color);
+        padding: 20px;
+        transition: right 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 9999;
+      }
+
+      .sidebar.active {
+        right: 0;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.03rem;
+        transition: all 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: var(--secondary-color);
+      }
+
+      .theme-toggle {
+        background-color: var(--accent-color);
+        color: white;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .theme-toggle:hover {
+        background-color: #8e44ad;
+      }
+
+      .close-sidebar {
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        margin: 25px 0;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+      }
+
+      .firstSection > div {
+        width: 100%;
+        max-width: 450px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .leftSection {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+
+      .leftSection .btn {
+        padding: 12px;
+        background-color: #b994d5;
+        color: white;
+        border: 2px solid white;
+        border-radius: 6px;
+        font-size: 10px;
+        cursor: pointer;
+      }
+      .btn {
+        padding: 10px 20px;
+        background-color: #0077b5; /* LinkedIn blue */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .rightSection {
+        display: none;
+      }
+
+      .teal {
+        color: var(--secondary-color);
+      }
+
+      @media (min-width: 769px) {
+        .rightSection {
+          display: flex;
+          justify-content: center;
+          z-index: 1;
+        }
+
+        .rightSection img {
+          width: 90%;
+          max-width: 400px;
+        }
+
+        .firstSection {
+          background: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-icon {
+          display: block;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .leftSection {
+          font-size: 2rem;
+        }
+
+        .firstSection {
+          background-image: url("/utils/bgimg.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        .firstSection::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          z-index: 0;
+        }
+      }
+
+      .secondSection {
+        max-width: 80vw;
+        margin: 20px auto;
+        height: 80vh;
+        /* padding: 20px; */
+      }
+
+      .secondSection h1 {
+        font-size: 1.9rem;
+      }
+      .textcol {
+        color: grey;
+        font-size: 1rem;
+      }
+
+      .secondSection .box {
+        background: white;
+        width: 76vw;
+        height: 1px;
+        margin: 30px 0;
+        display: flex;
+      }
+
+      .secondSection .vertical {
+        height: 93px;
+        width: 0.5px;
+        margin: 0 115px;
+        background-color: white;
+      }
+      .image-top {
+        width: 27px;
+        position: relative;
+        top: -30px;
+        left: -12px;
+      }
+      .vertical-title {
+        position: relative;
+        top: 75px;
+        width: 150px;
+        left: -3px;
+        font-size: 16px;
+      }
+      .vertical-desc {
+        position: relative;
+        top: 80px;
+        color: grey;
+        width: 150px;
+        left: -3px;
+        font-size: 9.5px;
+      }
+      footer {
+        background-color: rgb(30, 30, 30);
+        /* height: 233px; */
+      }
+      .footer {
+        display: flex;
+        padding: 23px 122px;
+        justify-content: space-evenly;
+      }
+      .footer ul {
+        list-style: none;
+      }
+      ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+ul li a {
+  color: rgb(198, 136, 198);
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+      .footer > div {
+        width: 223px 9px;
+      }
+      footer .text-center {
+        text-align: center;
+        color: grey;
+        padding: 12px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Saurabh's Portfolio</div>
+        <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Skills</a>
+          <a href="project.html">Projects</a>
+          <a href="contacts.html">Contact Me</a>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+      </nav>
+      <div class="sidebar" id="sidebar">
+        <span class="close-sidebar" onclick="toggleSidebar()">← Back</span>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="project.html">Projects</a>
+        <a href="contacts.html">Contact Me</a>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          Hi, My Name is <span class="teal">Saurabh Singh</span>
+          <div>
+            and I am a passionate<br />
+            <span class="teal" id="element"></span>
+            <br />
+            <div class="button-group">
+              <a
+                href="https://www.linkedin.com/in/sksinghs318/overlay/1748429591903/single-media-viewer/?profileId=ACoAAEF1zb8Bo4HGREAX64UMqDKy4a4kpWHiqEM"
+                target="_blank"
+                class="btn"
+                >Download Resume</a
+              >
+              <a
+                href="https://github.com/saurabhsingh223"
+                target="_blank"
+                class="btn"
+                >Visit GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="rightSection">
+          <img src="/utils/bgimg.png" alt="img" />
+        </div>
+      </section>
+
+      <hr
+        style="
+          background-color: var(--primary-color);
+          border: 0;
+          height: 0.5px;
+          margin: -75px 50px;
+        "
+      />
+
+      <br /><br /><br /><br />
+
+      <section class="secondSection">
+        <span class="textcol">What I have Done so far</span>
+        <h1>Projects</h1>
+        <br />
+        <div class="box">
+          <div class="vertical">
+            <img class="image-top" src="/utils/coding.png" alt="" />
+            <div class="vertical-title">HomeFixoras</div>
+            <div class="vertical-desc">
+              HomeFixoras is a web application that helps users to find the best
+              home repair services in their area. It allows users to search for
+              services, read reviews, and book appointments. User can also give
+              ratings to the services.
+              <br /><span style="font-weight: bold"
+                >Tools used: HTML, CSS, Bootstarp, JavaScript, React</span
+              >
+            </div>
+          </div>
+          <div class="vertical">
+            <img
+              class="image-top"
+              src="/utils/Pacman-PNG-HD-Quality.png"
+              alt=""
+            />
+            <div class="vertical-title">PacMan</div>
+            <div class="vertical-desc">
+              Pacman is a web application that lets users enjoy the classic
+              Pacman arcade game in a modern interface. It allows users to play
+              through levels, track their scores in real time, and save high
+              scores automatically.
+              <br /><span style="font-weight: bold"
+                >Tools used: HTML, CSS, Canvas API, JavaScript, React</span
+              >
+            </div>
+          </div>
+          <div class="vertical">
+            <img
+              class="image-top"
+              src="/utils/Gallery-PNG-Free-Image.png"
+              alt=""
+            />
+            <div class="vertical-title">Image Gallery</div>
+            <div class="vertical-desc">
+              Image Gallery is a web page that allows users to browse, view, and
+              organize images in a clean and responsive layout. It lets users
+              explore, preview full-size images, and experience smooth
+              transitions across devices.
+              <br /><span style="font-weight: bold"
+                >Tools used: HTML, CSS, JavaScript</span
+              >
+            </div>
+          </div>
+          <div class="vertical">
+            <img
+              class="image-top"
+              src="/utils/vecteezy_javascript-logo-png-javascript-icon-transparent-png_27127463.png"
+              alt=""
+            />
+            <div class="vertical-title">Portfolio Webpage</div>
+            <div class="vertical-desc">
+              My Portfolio is a web application that highlights my skills,
+              projects, and background as a full-stack developer. It allows
+              visitors to explore my work, learn about my journey, and connect
+              with me through an integrated contact form.
+              <br /><span style="font-weight: bold"
+                >Tools used: HTML, CSS, JavaScript</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Saurabh's Developer Portfolio</h3>
+        </div>
+        <div class="footer-Second">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Projects</li>
+          </ul>
+        </div>
+        <div class="footer-Third">
+          <ul>
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:+918115950486">+91 8115950486</a>
+            </li>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:bhriguvanshi223@gmail.com"
+                >bhriguvanshi223@gmail.com</a
+              >
+            </li>
+            <li>
+              <strong>LinkedIn:</strong>
+              <a href="https://www.linkedin.com/in/sksinghs318" target="_blank"
+                >linkedin.com/in/sksinghs318</a
+              >
+            </li>
+            <li>
+              <strong>GitHub:</strong>
+              <a href="https://github.com/saurabhsingh223" target="_blank"
+                >github.com/saurabhsingh223</a
+              >
+            </li>
+            <li><strong>Location:</strong> Ghaziabad, Delhi</li>
+          </ul>
+        </div>
+        <div class="footer-Fourth"></div>
+      </div>
+      <div class="text-center">
+        copyright &#169; saurabhportfolio.com | All rights reserved
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Web Developer",
+          "Web Designer",
+          "Data Analyst",
+          "Java Developer!",
+        ],
+        typeSpeed: 50,
+      });
+
+      function toggleTheme() {
+        const root = document.documentElement;
+        const body = document.body;
+        const currentBg = getComputedStyle(body).backgroundColor;
+
+        if (currentBg === "rgb(18, 18, 18)") {
+          root.style.setProperty("--dark-bg", "#f4f0fb");
+          root.style.setProperty("--dark-text", "#1e1e1e");
+          body.style.backgroundColor = "#f4f0fb";
+          body.style.color = "#1e1e1e";
+        } else {
+          root.style.setProperty("--dark-bg", "#121212");
+          root.style.setProperty("--dark-text", "#e0e0e0");
+          body.style.backgroundColor = "#121212";
+          body.style.color = "#e0e0e0";
+        }
+      }
+
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Saurabh Singh</title>
+  <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+    }
+
+    header {
+      background-color: #6a0dad;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .skills-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skills-section h2 {
+      font-size: 3rem;
+      text-align: center;
+      color: #bb86fc;
+      margin-bottom: 50px;
+    }
+
+    .skill {
+      margin-bottom: 25px;
+    }
+
+    .skill-name {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #2c2c2c;
+      height: 18px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(to right, #bb86fc, #9f56ff);
+      border-radius: 12px 0 0 12px;
+    }
+
+    /* Skill Levels */
+    .html { width: 95%; }
+    .css { width: 90%; }
+    .javascript { width: 75%; }
+    .react { width: 60%; }
+    .java { width: 75%; }
+    .python { width: 50%; }
+    .sql { width: 70%; }
+
+    @media (max-width: 768px) {
+      .skills-section h2 {
+        font-size: 2rem;
+      }
+
+      .skill-name {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Saurabh's Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="project.html">Projects</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="skills-section">
+    <h2>My Skills</h2>
+
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="progress-bar"><div class="progress html"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">CSS</div>
+      <div class="progress-bar"><div class="progress css"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="progress-bar"><div class="progress javascript"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">React</div>
+      <div class="progress-bar"><div class="progress react"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">Java</div>
+      <div class="progress-bar"><div class="progress java"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">Python</div>
+      <div class="progress-bar"><div class="progress python"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">SQL</div>
+      <div class="progress-bar"><div class="progress sql"></div></div>
+    </div>
+
+  </section>
+
+</body>
+</html>
